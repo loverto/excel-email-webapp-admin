@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form name="punchout_form" method="post" action="https://openapi.alipaydev.com/gateway.do?charset=UTF-8&method=alipay.trade.wap.pay&sign=ZEbPphMia%2F%2FIS5lNiBkgW6XVZIECKCFh%2FiUtmUEys8jhfRlqRQa80PSz0PuF0sbY5zJwDcMmg3KU4NtsRDcoYjdR%2FaLWyBdb2Ng0pnI9N%2BFZcrjQYsyJ9JyGm9fwZw8ZLHAjemsallOzK7v1NE%2BCzAAenU7qvUQDfTqthUHpeUXYPQog146gclYbRRCD2k%2Bwz9XfkkxnegAL6cyYKS%2BU9odvL0T%2FOwSaHuArLcVNJs1Jl6C0chAlNz66mmG%2BQejPtWmTOG9hTQQTiQ%2F7%2BTX5pm62XEvY10BDOOH2L8VcdtWU5EHMms8ZT7aXLG%2FoQniOB0eDUAMlNomxfp1MgI60kg%3D%3D&return_url=www.baidu.com&notify_url=http%3A%2F%2Flocalhost%3A9000%2Fapi%2Fnotify&version=1.0&app_id=2016092500589864&sign_type=RSA2&timestamp=2019-01-23+20%3A21%3A35&alipay_sdk=alipay-sdk-java-3.4.49.ALL&format=json">
+  <input type="hidden" name="biz_content" value="{&quot;body&quot;:&quot;审核信用所需金额，共50.00元&quot;,&quot;out_trade_no&quot;:&quot;1&quot;,&quot;product_code&quot;:&quot;QUICK_WAP_WAY&quot;,&quot;subject&quot;:&quot;审核信用所需金额&quot;,&quot;timeout_express&quot;:&quot;2m&quot;,&quot;total_amount&quot;:&quot;50.00&quot;}">
+  <input type="submit" value="立即支付" style="display:none" >
+</form>
+<script>document.forms[0].submit();</script>
+</body>
+</html>
