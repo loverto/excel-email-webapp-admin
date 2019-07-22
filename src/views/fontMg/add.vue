@@ -105,9 +105,10 @@ export default {
       users: [], // 用户信息
       ruleForm: {
         // 邮件内容
-        mailContent: '',
+        mailContent: `<p>亲爱的{ username }同事</p>
+<p>&nbsp; &nbsp;本年度公积金调整，如有疑问请联系企业管理部，联系电话:xxxx,联系人:XXX</p>`,
         // 邮件主题
-        mailSubject: ''
+        mailSubject: '公积金调整'
       },
       rules: {
         mailContent: [
