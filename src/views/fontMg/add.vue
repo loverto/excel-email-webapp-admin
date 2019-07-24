@@ -180,19 +180,20 @@ export default {
                 console.log('Row ' + rowNumber + ' = ' + JSON.stringify(value))
                 var sheBao = {
                   'dept': value[2],
-                  'dwbfGongshang': value[13].toFixed(3),
-                  'dwbfShengyu': value[14].toFixed(2),
-                  'dwbfShiye': value[11].toFixed(2),
-                  'dwbfTotal': value[15].toFixed(2),
-                  'dwbfYaolao': value[10].toFixed(2),
-                  'dwbfYiliao': value[12].toFixed(2),
-                  'grkkxxShiye': value[7].toFixed(3),
-                  'grkkxxTotal': value[9].toFixed(3),
-                  'grkkxxYaolang': value[6].toFixed(2),
-                  'grkkxxYiliao': value[8].toFixed(2),
+                  'dwbfGongshang': value[14].toFixed(3),
+                  'dwbfShengyu': value[15].toFixed(2),
+                  'dwbfShiye': value[12].toFixed(2),
+                  'dwbfTotal': value[16].toFixed(2),
+                  'dwbfYaolao': value[11].toFixed(2),
+                  'dwbfYiliao': value[13].toFixed(2),
+                  'grkkxxShiye': value[8].toFixed(3),
+                  'grkkxxTotal': value[10].toFixed(3),
+                  'grkkxxYaolang': value[7].toFixed(2),
+                  'grkkxxYiliao': value[9].toFixed(2),
                   'name': value[3],
                   'sbjsYanglaoShiye': value[4],
-                  'sbjsYiShangSheng': value[5],
+                  'sbjsYiShangSheng': value[6],
+                  'sbjsGongShang': value[5],
                   'xh': value[1]
                 }
                 sheBaosaveOrUpdate.saveOrUpdate(sheBao).then(response => {
