@@ -1,7 +1,7 @@
 <template>
   <div class="app-container product-wrapper">
     <el-button type="primary" class="add-btn" size="small" icon="el-icon-plus" @click="handleAdd(null)">导入五险一金Excel</el-button>
-    <el-button type="text" icon="el-icon-refresh" @click="getList">刷新</el-button>
+    <!--<el-button type="text" icon="el-icon-refresh" @click="getList">刷新</el-button>
     <el-table
       v-loading="listLoading"
       :data="list"
@@ -64,7 +64,7 @@
         </template>
       </el-table-column>
     </el-table>
-    <pagination v-show="total>0" :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.limit" @pagination="getList" />
+    <pagination v-show="total>0" :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.limit" @pagination="getList" />-->
 
     <!-- 编辑产品弹框 -->
     <el-dialog
@@ -94,16 +94,16 @@
 
 <script>
 import * as Api from '@/api/gongjijins'
-import * as SheBaoApi from '@/api/she-baos'
+// import * as SheBaoApi from '@/api/she-baos'
 
 import { types } from '@/utils/role.js'
-import Pagination from '@/components/Pagination'
+// import Pagination from '@/components/Pagination'
 import AddPage from './add.vue'
-import UploadFont from './edit.vue'
+// import UploadFont from './edit.vue'
 import config from '@/utils/config.js'
 export default {
   name: 'FontList',
-  components: { AddPage, Pagination, UploadFont },
+  components: { AddPage },
   data() {
     return {
       list: [],

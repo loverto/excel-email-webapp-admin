@@ -79,7 +79,7 @@ import * as WxyjApi from '@/api/wxyj'
 import * as sheBaosaveOrUpdate from '@/api/she-baos'
 import * as mailContent from '@/api/mail-content'
 import { deepClone } from '@/utils'
-import { uploader, removeRemoteImage } from '@/utils/file-uploader.js'
+import { removeRemoteImage } from '@/utils/file-uploader.js'
 import Tinymce from '@/components/Tinymce'
 import * as Excel from 'exceljs/dist/exceljs'
 
@@ -106,7 +106,11 @@ export default {
       ruleForm: {
         // 邮件内容
         mailContent: `<p>亲爱的{ username }同事</p>
-<p>&nbsp; &nbsp;本年度公积金调整，如有疑问请联系企业管理部，联系电话:xxxx,联系人:XXX</p>`,
+<p>&nbsp; &nbsp; &nbsp; 附件为本年度五险一金缴费基数调整确认单。自2019年7月至2020年6月按本基数进行缴纳五险一金，具体基数及代扣费用标准详见附件。请收到邮件后确认无误后务必予以回复，感谢大家的理解与配合。如有疑问请联系人力资源部王霄，联系方式010-89735800转1110。</p>
+<p>回复信息如下：</p>
+<p>确认无误。</p>
+<p>署名：XXX</p>
+<p>日期：XX年XX月XX日</p>`,
         // 邮件主题
         mailSubject: '公积金调整'
       },
@@ -249,6 +253,7 @@ export default {
           // 新增或保存操作
           mailContent.add(this.ruleForm).then(response => {
             if (response.status === 201) {
+              //
             }
             const wxyj = { 'mailConfigId': this.ruleForm.mail.id,
               'mailContentId': response.data.id }

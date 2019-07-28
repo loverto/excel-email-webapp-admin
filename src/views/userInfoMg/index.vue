@@ -8,8 +8,8 @@
               v-for="item in options"
               :key="item.id"
               :label="item.name"
-              :value="item">
-            </el-option>
+              :value="item"
+            />
           </el-select>
         </td>
       </el-form-item>
@@ -17,9 +17,9 @@
         <td>
           <el-button type="success" icon="el-icon-search" @click="search(currentSearch)">查询</el-button>
         </td>
-<!--        <td>-->
-<!--          <el-button type="primary" icon="el-icon-plus" @click="handleAdd">添加用户</el-button>-->
-<!--        </td>-->
+        <!--        <td>-->
+        <!--          <el-button type="primary" icon="el-icon-plus" @click="handleAdd">添加用户</el-button>-->
+        <!--        </td>-->
         <td>
           <el-upload
             ref="upload"
@@ -39,7 +39,7 @@
             >
               <i :class="'el-icon-' + (uploading ? 'loading' : 'upload')" />  从Excel中导入用户信息
             </el-button>
-        </el-upload>
+          </el-upload>
         </td>
       </el-form-item>
     </el-form>
@@ -275,8 +275,8 @@ export default {
                 console.log('Row ' + rowNumber + ' = ' + JSON.stringify(value))
                 var userInfo = {
                   'idCard': value[8],
-                  'internetMail': value[4].text,
-                  'mail': value[3].text,
+                  'internetMail': value[4] && value[4].text || value[4],
+                  'mail': value[3] && value[3].text || value[3],
                   'name': value[2],
                   'phone': value[7],
                   'qq': value[6],
@@ -286,6 +286,7 @@ export default {
                   if (response.status === 201 || response.status === 200) {
                     self.getList()
                     self.getOptions()
+                    this.uploading = false
                     self.$message({
                       message: `添加成功！`,
                       type: 'success'
